@@ -32,7 +32,9 @@ public class JavaAST10 {
 
         gestorArquivo.gravarCompras(compras);
 
-        exibirCompras(compras);
+        Compras comprasLidas = gestorArquivo.lerCompras();
+
+        exibirCompras(comprasLidas);
 
         scanner.close();
     }

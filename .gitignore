@@ -7,3 +7,6 @@ out/
 
 # macOS
 .DS_Store
+
+# Arquivos gerados pelo projeto
+compras.txt
