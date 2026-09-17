@@ -1,32 +1,42 @@
 package JavaAST10;
 
+import java.util.Scanner;
+
 public class JavaAST10 {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
         Compras compras = new Compras();
 
-        compras.adicionarProduto(
-                0,
-                new Produto("Arroz", 2, 10.00)
-        );
+        for (int i = 0; i < compras.getProdutos().length; i++) {
 
-        compras.adicionarProduto(
-                1,
-                new Produto("Feijão", 3, 8.50)
-        );
+            System.out.println("\n--- Compra " + (i + 1) + " ---");
 
-        compras.adicionarProduto(
-                2,
-                new Produto("Leite", 4, 5.00)
-        );
+            System.out.print("Digite o nome do produto: ");
+            String nome = scanner.nextLine();
+
+            System.out.print("Digite a quantidade: ");
+            int quantidade = scanner.nextInt();
+
+            System.out.print("Digite o preço unitário: ");
+            double precoUnitario = scanner.nextDouble();
+
+            scanner.nextLine();
+
+            Produto produto = new Produto(nome, quantidade, precoUnitario);
+
+            compras.adicionarProduto(i, produto);
+        }
 
         exibirCompras(compras);
+
+        scanner.close();
     }
 
     private static void exibirCompras(Compras compras) {
 
-        System.out.println("--- Compras ---");
+        System.out.println("\n--- Compras ---");
 
         for (Produto produto : compras.getProdutos()) {
             System.out.printf(

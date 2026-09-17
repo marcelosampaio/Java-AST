@@ -2,10 +2,12 @@ package JavaAST10;
 
 public class Compras {
 
+    private static final int QUANTIDADE_COMPRAS = 3;
+
     private Produto[] produtos;
 
     public Compras() {
-        produtos = new Produto[3];
+        produtos = new Produto[QUANTIDADE_COMPRAS];
     }
 
     public void adicionarProduto(int indice, Produto produto) {
