@@ -8,6 +8,7 @@ public class JavaAST10 {
 
         Scanner scanner = new Scanner(System.in);
         Compras compras = new Compras();
+        GestorArquivo gestorArquivo = new GestorArquivo();
 
         for (int i = 0; i < compras.getProdutos().length; i++) {
 
@@ -28,6 +29,8 @@ public class JavaAST10 {
 
             compras.adicionarProduto(i, produto);
         }
+
+        gestorArquivo.gravarCompras(compras);
 
         exibirCompras(compras);
 
