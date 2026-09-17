@@ -27,7 +27,7 @@ public class JavaAST10 {
 
             Produto produto = new Produto(nome, quantidade, precoUnitario);
 
-            compras.adicionarProduto(i, produto);
+            compras.adicionarProduto(produto);
         }
 
         gestorArquivo.gravarCompras(compras);
